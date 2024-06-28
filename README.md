@@ -6,7 +6,7 @@ It is built using capacitor with android integration
 
 A range of simple pages accessible from a sliding sidebar nav menu 
 
-## pnm packages
+## npm packages
 
 - react (obviously)
 - react-leaflet
