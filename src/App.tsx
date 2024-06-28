@@ -1,7 +1,7 @@
 import { IonApp, IonRouterOutlet, IonSplitPane, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { Redirect, Route } from 'react-router-dom';
-import { PersistGate } from 'redux-persist/integration/react'
+import { PersistGate } from 'redux-persist/integration/react';
 import Menu from './components/Menu';
 import Page from './pages/Page/index';
 
@@ -43,42 +43,43 @@ import { BasicMap } from './pages/Map';
 import { Todo } from './pages/Todo';
 import { NotFound } from './pages/NotFound';
 
-import { store } from './store'
+import { persistor, store } from './store'
 import { Provider } from 'react-redux';
 
 setupIonicReact();
 
 const App: React.FC = () => {
   return <Provider store={store}>
-
-    <IonApp>
-      <IonReactRouter>
-        <IonSplitPane contentId="main">
-          <Menu />
-          <IonRouterOutlet id="main">
-            <Route path="/" exact={true}>
-              <Redirect to="/folder/Inbox" />
-            </Route>
-            <Route path="/folder/:name" exact={true}>
-              <Page />
-            </Route>
-            <Route path="/basicmap" exact={true}>
-              <BasicMap />
-            </Route>
-            <Route path="/camera" exact={true}>
-              <Camera />
-            </Route>
-            <Route path="/profile" exact={true}>
-              <Profile />
-            </Route>
-            <Route path="/todo" exact={true}>
-              <Todo />
-            </Route>
-            <Route component={NotFound} />
-          </IonRouterOutlet>
-        </IonSplitPane>
-      </IonReactRouter>
-    </IonApp>
+    <PersistGate loading={null} persistor={persistor}>
+      <IonApp>
+        <IonReactRouter>
+          <IonSplitPane contentId="main">
+            <Menu />
+            <IonRouterOutlet id="main">
+              <Route path="/" exact={true}>
+                <Redirect to="/folder/Inbox" />
+              </Route>
+              <Route path="/folder/:name" exact={true}>
+                <Page />
+              </Route>
+              <Route path="/basicmap" exact={true}>
+                <BasicMap />
+              </Route>
+              <Route path="/camera" exact={true}>
+                <Camera />
+              </Route>
+              <Route path="/profile" exact={true}>
+                <Profile />
+              </Route>
+              <Route path="/todo" exact={true}>
+                <Todo />
+              </Route>
+              <Route component={NotFound} />
+            </IonRouterOutlet>
+          </IonSplitPane>
+        </IonReactRouter>
+      </IonApp>
+    </PersistGate>
   </Provider>
 };
 

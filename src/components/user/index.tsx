@@ -11,8 +11,11 @@ export const UserForm: React.FC = () => {
     const [formState, setFormState] = useState({ firstName: '', lastName: '', email: '' });
 
     useEffect(() => {
-        dispatch(fetchUser());
-    }, [dispatch]);
+        // Only fetch user data if the state is empty
+        if (!userState.user) {
+            dispatch(fetchUser());
+        }
+    }, [dispatch, userState.user]);
 
     useEffect(() => {
         if (userState.user) {

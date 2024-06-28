@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonList, IonItem, IonLabel, IonCheckbox, IonButton, IonInput } from '@ionic/react';
+import { IonList, IonItem, IonLabel, IonCheckbox, IonButton, IonInput } from '@ionic/react';
 import { RootState } from '../../store';
-import { addTodo, toggleTodo, removeTodo } from "../../store/slices/todoSlice"
+import { addTodo, toggleTodo, removeTodo, Todo } from "../../store/slices/todoSlice"
 
 export const TodoSubscriber = () => {
     const todos = useSelector((state: RootState) => state.todos.todos);
-    const dispatch = useDispatch();
 
     return <>
         <h2>Live Todo List updates</h2>
@@ -41,7 +40,7 @@ export const Todos: React.FC = () => {
         <h2>Todo list form</h2>
         <p>Tasks are saved in application state</p>
         <IonList>
-            {todos.map((todo) => (
+            {todos.map((todo: Todo) => (
                 <IonItem key={todo.id}>
                     <IonCheckbox
                         slot="start"
