@@ -11,7 +11,7 @@ import {
 } from '@ionic/react';
 
 import { useLocation } from 'react-router-dom';
-import { archiveOutline, archiveSharp, bookmarkOutline, camera, cameraSharp, checkmarkDone, checkmarkSharp, female, femaleSharp, heartOutline, heartSharp, leaf, leafSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, person, personSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
+import { archiveOutline, archiveSharp, bookmarkOutline, camera, cameraSharp, checkmarkDone, checkmarkSharp, female, femaleSharp, heartOutline, heartSharp, home, homeSharp, leaf, leafSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, person, personSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
 import './Menu.css';
 
 interface AppPage {
@@ -23,10 +23,10 @@ interface AppPage {
 
 const appPages: AppPage[] = [
   {
-    title: 'Inbox',
-    url: '/folder/Inbox',
-    iosIcon: mailOutline,
-    mdIcon: mailSharp
+    title: 'Home',
+    url: '/home',
+    iosIcon: home,
+    mdIcon: homeSharp
   },
   {
     title: 'Camera',
@@ -51,6 +51,12 @@ const appPages: AppPage[] = [
     url: '/basicmap',
     iosIcon: leaf,
     mdIcon: leafSharp,
+  },
+  {
+    title: 'Inbox',
+    url: '/folder/Inbox',
+    iosIcon: mailOutline,
+    mdIcon: mailSharp
   },
   {
     title: 'Outbox',

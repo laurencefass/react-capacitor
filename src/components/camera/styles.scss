@@ -1,11 +1,12 @@
 ion-img {
   height: 300px;
   object-fit: contain;
+  min-width: 100%;
 }
 
 ion-modal {
   ion-img {
-    height: 90%;
     min-width: 100%;
+    height: 90vh;
   }
 }

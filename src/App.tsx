@@ -37,6 +37,10 @@ import '@ionic/react/css/palettes/dark.system.css';
 /* Theme variables */
 import './theme/variables.css';
 
+/* swiper styles */
+import 'swiper/css';
+import '@ionic/react/css/ionic-swiper.css';
+
 import { Camera } from './pages/Camera';
 import { Profile } from './pages/Profile';
 import { BasicMap } from './pages/Map';
@@ -45,6 +49,8 @@ import { NotFound } from './pages/NotFound';
 
 import { persistor, store } from './store'
 import { Provider } from 'react-redux';
+import { Home } from './pages/Home';
+import { Box } from './pages/Box3D';
 
 setupIonicReact();
 
@@ -57,10 +63,13 @@ const App: React.FC = () => {
             <Menu />
             <IonRouterOutlet id="main">
               <Route path="/" exact={true}>
-                <Redirect to="/folder/Inbox" />
+                <Redirect to="/home" />
               </Route>
               <Route path="/folder/:name" exact={true}>
                 <Page />
+              </Route>
+              <Route path="/home" exact={true}>
+                <Home />
               </Route>
               <Route path="/basicmap" exact={true}>
                 <BasicMap />
@@ -73,6 +82,9 @@ const App: React.FC = () => {
               </Route>
               <Route path="/todo" exact={true}>
                 <Todo />
+              </Route>
+              <Route path="/Box3D" exact={true}>
+                <Box />
               </Route>
               <Route component={NotFound} />
             </IonRouterOutlet>
