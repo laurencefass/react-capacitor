@@ -49,7 +49,7 @@ const Box: React.FC = () => {
             castShadow
         >
             <boxGeometry args={[1, 1, 1]} />
-            <meshPhongMaterial color={'orange'} opacity={0.5} transparent={true} />
+            <meshPhongMaterial color={'orange'} opacity={0.75} transparent={true} />
         </mesh>
     );
 };
