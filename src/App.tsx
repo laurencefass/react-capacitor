@@ -50,7 +50,7 @@ import { NotFound } from './pages/NotFound';
 import { persistor, store } from './store'
 import { Provider } from 'react-redux';
 import { Home } from './pages/Home';
-import { Box } from './pages/Box3D';
+import { Box } from './pages/cube3d';
 
 setupIonicReact();
 
@@ -83,7 +83,7 @@ const App: React.FC = () => {
               <Route path="/todo" exact={true}>
                 <Todo />
               </Route>
-              <Route path="/Box3D" exact={true}>
+              <Route path="/cube3d" exact={true}>
                 <Box />
               </Route>
               <Route component={NotFound} />

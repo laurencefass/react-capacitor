@@ -3,7 +3,7 @@ import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, Io
 import "./styles.scss"
 import { useEffect } from "react";
 import { Toast } from '@capacitor/toast';
-import { Box3D } from "../../components/3d/box/box";
+import { Cube3D } from "../../components/3d/cube/cube";
 import { BackgroundImageZoom } from "../../components/backgroundImageZoom";
 
 export function Box() {
@@ -27,7 +27,7 @@ export function Box() {
             </IonToolbar>
         </IonHeader>
         <IonContent fullscreen>
-            <Box3D />
+            <Cube3D />
             <BackgroundImageZoom />
         </IonContent>
     </IonPage>

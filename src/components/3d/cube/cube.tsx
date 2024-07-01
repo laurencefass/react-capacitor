@@ -3,7 +3,7 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 
-const Box: React.FC = () => {
+const Cube: React.FC = () => {
     const meshRef = useRef<THREE.Mesh>(null);
     const [rotationVelocity, setRotationVelocity] = useState({ x: 0, y: 0 });
     const [isDragging, setIsDragging] = useState(false);
@@ -84,13 +84,13 @@ const FixedDirectionalLight: React.FC = () => {
     );
 };
 
-export const Box3D: React.FC = () => {
+export const Cube3D: React.FC = () => {
     return (
         <div style={{ width: '95vw', height: '80vh' }}>
             <Canvas shadows camera={{ position: [0, 2, 10], fov: 50 }}>
                 <ambientLight intensity={0.5} />
                 <FixedDirectionalLight />
-                <Box />
+                <Cube />
                 <OrbitControls />
                 <mesh position={[0, -2.5, 0]} rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
                     <planeGeometry args={[10, 10]} />
